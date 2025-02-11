@@ -12,6 +12,7 @@ import * as mapa from './leaflet.js';
 * - Maneja el evento de envío del formulario para autenticación.
 */
 export function dibujarLogin() {
+    console.log('Dibujar la pantalla de Login');
     let $css = $('<link>', { rel: 'stylesheet', href: '../estilos/styles_login.css' });
     $('head').append($css);
     $('body').empty(); // Limpiar el contenido previo
@@ -101,6 +102,7 @@ export function dibujarLogin() {
 * - Define eventos para manejar la navegación dentro de la aplicación.
 */
 export function dibujarDashboard() {
+    console.log('Dibujar el Dashboard');
     $('link[href$="styles_login.css"]').remove();
     let $css = $('<link>', { rel: 'stylesheet', href: '../estilos/styles_dashboard.css' });
     $('head').append($css);
@@ -118,7 +120,7 @@ export function dibujarDashboard() {
             .append($('<li>').append($('<a>', { href: '#', text: 'Mapa de Zonas', id: 'mapa-link' })))
             .append($('<li>').append($('<a>', { href: '#', text: 'Análisis', id: 'analisis-link' })))
             .append($('<li>').append($('<a>', { href: '#', text: 'Reportes', id: 'reportes-link' })))
-            .append($('<li>').append($('<a>', { href: '#', text: 'Configuración', id: 'configuracion-link' })))
+            .append($('<li>').append($('<a>', { href: '#', text: 'Cerrar Sesión', id: 'sesion-link' })))
         );
 
     $sidebar.append($logoContainer, $menu);
@@ -142,9 +144,9 @@ export function dibujarDashboard() {
         event.preventDefault();
         dibujarReportes();
     });
-    $('#configuracion-link').on('click', function(event) {
+    $('#sesion-link').on('click', function(event) {
         event.preventDefault();
-        dibujarConfiguracion();
+        dibujarLogin();
     });
     
     dibujarInicio(); // Mostrar la pantalla inicial por defecto
@@ -306,6 +308,7 @@ export function dibujarInicio() {
 * además de mostrar los datos climáticos actuales y la predicción.
 */
 export function dibujarMapa() {
+    console.log('Dibujar la sección de Mapa');
     // Limpiar el contenido del main antes de agregar el mapa y la información
     $('#main').empty(); 
   
@@ -356,6 +359,7 @@ export function dibujarMapa() {
 * de la ciudad seleccionada, además de mostrar tendencias climáticas a partir de los datos obtenidos.
 */
 export function dibujarAnalisis() {
+    console.log('Dibujar la sección de Análisis');
     // Limpiar el contenido del main antes de agregar la sección de análisis
     $('#main').empty();
   
