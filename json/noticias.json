@@ -1,0 +1,153 @@
+[
+    {
+      "title": "Aumento del nivel del mar amenaza ciudades costeras",
+      "summary": "Nuevos estudios indican que el nivel del mar ha aumentado más de lo previsto, afectando a millones de personas.",
+      "link": "https://ejemplo.com/noticia1"
+    },
+    {
+      "title": "Olas de calor más intensas debido al cambio climático",
+      "summary": "Las temperaturas récord ponen en riesgo la salud de la población y aumentan la demanda de energía.",
+      "link": "https://ejemplo.com/noticia2"
+    },
+    {
+      "title": "Deforestación en la Amazonía alcanza niveles alarmantes",
+      "summary": "Los expertos advierten que la pérdida de bosques podría acelerar el cambio climático de manera irreversible.",
+      "link": "https://ejemplo.com/noticia3"
+    },
+    {
+      "title": "Sequías extremas afectan a la agricultura global",
+      "summary": "Las sequías prolongadas están disminuyendo la producción agrícola en regiones clave del mundo.",
+      "link": "https://ejemplo.com/noticia4"
+    },
+    {
+      "title": "Deshielo de los polos aumenta el riesgo de inundaciones",
+      "summary": "El rápido deshielo en el Ártico y la Antártida está contribuyendo al aumento del nivel del mar.",
+      "link": "https://ejemplo.com/noticia5"
+    },
+    {
+      "title": "La contaminación del aire empeora por el cambio climático",
+      "summary": "Las altas temperaturas están exacerbando la calidad del aire, lo que afecta la salud pública en todo el mundo.",
+      "link": "https://ejemplo.com/noticia6"
+    },
+    {
+      "title": "Huracanes más intensos debido al cambio climático",
+      "summary": "El aumento de la temperatura de los océanos está alimentando huracanes más fuertes y destructivos.",
+      "link": "https://ejemplo.com/noticia7"
+    },
+    {
+      "title": "La biodiversidad se ve gravemente afectada por el cambio climático",
+      "summary": "Muchas especies están desapareciendo debido a los cambios en su entorno natural y las condiciones climáticas extremas.",
+      "link": "https://ejemplo.com/noticia8"
+    },
+    {
+      "title": "El cambio climático está afectando las migraciones humanas",
+      "summary": "Las personas se ven obligadas a abandonar sus hogares debido a la escasez de recursos y desastres naturales.",
+      "link": "https://ejemplo.com/noticia9"
+    },
+    {
+      "title": "Aumento de la acidificación de los océanos amenaza los ecosistemas marinos",
+      "summary": "El aumento del CO2 está alterando la química del océano, afectando gravemente a los corales y otras especies marinas.",
+      "link": "https://ejemplo.com/noticia10"
+    },
+    {
+      "title": "Impacto del cambio climático en la seguridad alimentaria mundial",
+      "summary": "Las condiciones climáticas extremas están alterando los cultivos y las cadenas de suministro de alimentos.",
+      "link": "https://ejemplo.com/noticia11"
+    },
+    {
+      "title": "La desforestación continúa siendo un desafío global",
+      "summary": "A pesar de los esfuerzos por frenar la tala ilegal, los bosques siguen siendo destruidos a gran escala.",
+      "link": "https://ejemplo.com/noticia12"
+    },
+    {
+      "title": "Las olas de calor matan más personas cada año",
+      "summary": "Los eventos de calor extremo están aumentando las muertes relacionadas con el calor en muchas regiones del planeta.",
+      "link": "https://ejemplo.com/noticia13"
+    },
+    {
+      "title": "El cambio climático afecta la salud mental de las personas",
+      "summary": "Los desastres naturales y la inseguridad climática están aumentando los problemas de salud mental en las comunidades afectadas.",
+      "link": "https://ejemplo.com/noticia14"
+    },
+    {
+      "title": "El uso de energías renovables sigue creciendo",
+      "summary": "A pesar de los desafíos, el sector de las energías renovables está en expansión como respuesta al cambio climático.",
+      "link": "https://ejemplo.com/noticia15"
+    },
+    {
+      "title": "El cambio climático podría provocar un colapso en los ecosistemas marinos",
+      "summary": "El calentamiento global está alterando los hábitats marinos y causando estragos en las especies dependientes del océano.",
+      "link": "https://ejemplo.com/noticia16"
+    },
+    {
+      "title": "Los incendios forestales se intensifican por el cambio climático",
+      "summary": "Las altas temperaturas y la sequedad del clima están aumentando la frecuencia y gravedad de los incendios forestales.",
+      "link": "https://ejemplo.com/noticia17"
+    },
+    {
+      "title": "El aumento de la temperatura global afecta a las zonas de alta montaña",
+      "summary": "Las glaciares de las zonas altas están retrocediendo rápidamente debido al calentamiento global.",
+      "link": "https://ejemplo.com/noticia18"
+    },
+    {
+      "title": "Los gobiernos buscan soluciones para mitigar el cambio climático",
+      "summary": "Diversos acuerdos internacionales están en marcha para reducir las emisiones de gases de efecto invernadero.",
+      "link": "https://ejemplo.com/noticia19"
+    },
+    {
+      "title": "El cambio climático y su impacto en los recursos hídricos",
+      "summary": "El aumento de temperaturas y sequías están afectando las fuentes de agua en muchas regiones del mundo.",
+      "link": "https://ejemplo.com/noticia20"
+    },
+    {
+      "title": "Las políticas climáticas de las grandes potencias siguen siendo insuficientes",
+      "summary": "A pesar de los compromisos globales, las acciones para frenar el cambio climático no están avanzando a un ritmo suficiente.",
+      "link": "https://ejemplo.com/noticia21"
+    },
+    {
+      "title": "El cambio climático está afectando las zonas polares",
+      "summary": "Las zonas más frías del planeta están experimentando un calentamiento mucho más rápido que el resto del mundo.",
+      "link": "https://ejemplo.com/noticia22"
+    },
+    {
+      "title": "Los océanos como solución al cambio climático",
+      "summary": "Investigadores exploran formas de utilizar los océanos para capturar carbono y mitigar el cambio climático.",
+      "link": "https://ejemplo.com/noticia23"
+    },
+    {
+      "title": "El cambio climático afecta los patrones migratorios de los animales",
+      "summary": "Las especies animales están modificando sus hábitos migratorios debido a las alteraciones climáticas.",
+      "link": "https://ejemplo.com/noticia24"
+    },
+    {
+      "title": "El impacto del cambio climático en la agricultura familiar",
+      "summary": "Los agricultores familiares están viendo un aumento de las pérdidas debido a las condiciones climáticas cambiantes.",
+      "link": "https://ejemplo.com/noticia25"
+    },
+    {
+      "title": "El papel de la educación en la lucha contra el cambio climático",
+      "summary": "La concienciación y la educación ambiental son esenciales para enfrentar la crisis climática.",
+      "link": "https://ejemplo.com/noticia26"
+    },
+    {
+      "title": "Innovaciones tecnológicas ayudan a combatir el cambio climático",
+      "summary": "El desarrollo de nuevas tecnologías sostenibles está siendo clave para reducir las emisiones y frenar el calentamiento global.",
+      "link": "https://ejemplo.com/noticia27"
+    },
+    {
+      "title": "Cambio climático y su impacto en la biodiversidad urbana",
+      "summary": "Las ciudades enfrentan riesgos derivados del cambio climático que afectan a su biodiversidad y calidad de vida.",
+      "link": "https://ejemplo.com/noticia28"
+    },
+    {
+      "title": "El cambio climático acelera la desertificación de tierras",
+      "summary": "El calentamiento global está haciendo que grandes áreas de tierra se conviertan en desiertos, afectando a las comunidades agrícolas.",
+      "link": "https://ejemplo.com/noticia29"
+    },
+    {
+      "title": "Acuerdos internacionales de cambio climático son clave para el futuro",
+      "summary": "Los acuerdos internacionales sobre cambio climático podrían ser decisivos para frenar los efectos más graves del calentamiento global.",
+      "link": "https://ejemplo.com/noticia30"
+    }
+  ]
+  

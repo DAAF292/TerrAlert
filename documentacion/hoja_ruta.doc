@@ -1,0 +1,132 @@
+# **Hoja de Ruta: Plataforma de Monitoreo para Zonas Afectadas por el Cambio Climático: TerrAlert**
+
+## **1️⃣ Fase 1: Definición y Planificación**
+### 🔹 Objetivos
+- Crear una **SPA (Single Page Application)** que permita el monitoreo y análisis de zonas afectadas por el cambio climático.
+- Dirigida a **organizaciones ambientales, investigadores y ciudadanos**.
+- Integrar tecnologías como **Firebase, Leaflet.js, OpenWeatherMap, DataTables.js y TensorFlow.js**.
+
+### 🔹 Tareas
+✅ **Definir el modelo de usuario** (roles: observador, investigador, administrador).
+✅ **Diseñar la estructura de la aplicación** (wireframes, diagramas de flujo).
+✅ **Establecer la arquitectura**: elección del framework (**React.js** recomendado por su eficiencia en SPA).
+✅ **Configurar Firebase** para autenticación de usuarios y almacenamiento de reportes.
+
+**🔹 Tecnologías utilizadas:**
+- **React.js**: Framework JavaScript para la creación de componentes reutilizables.
+- **Firebase Authentication**: Gestión de usuarios con login seguro basado en OAuth y JWT.
+- **Firestore (Firebase Database)**: Base de datos NoSQL en la nube para almacenar información de reportes ambientales.
+
+---
+
+## **2️⃣ Fase 2: Implementación de Funcionalidades Básicas**
+### 🔹 Autenticación de Usuarios (Firebase Authentication)
+✅ Implementar autenticación con email y contraseña.
+✅ Soporte para inicio de sesión con Google para mayor accesibilidad.
+✅ Recuperación de contraseñas y seguridad con doble autenticación opcional.
+
+**🔹 Tecnologías utilizadas:**
+- **Firebase Authentication**: Permite gestionar sesiones de usuarios con seguridad en la nube.
+- **JWT (JSON Web Token)**: Autenticación basada en tokens para mantener sesiones seguras.
+- **React Context API**: Para manejar el estado global del usuario autenticado.
+
+### 🔹 Mapa Interactivo (Leaflet.js)
+✅ Implementar geolocalización para permitir a los usuarios reportar su ubicación.
+✅ Mostrar puntos de interés con datos de impacto ambiental.
+✅ Integrar capas con información climática y visualización de imágenes satelitales.
+
+**🔹 Tecnologías utilizadas:**
+- **Leaflet.js**: Librería de mapas interactivos ligera y eficiente.
+- **OpenStreetMap**: Fuente de mapas gratuitos para visualizar información geográfica.
+- **Geolocation API**: API nativa del navegador para obtener coordenadas GPS del usuario.
+
+### 🔹 Datos Meteorológicos (OpenWeatherMap API)
+✅ Integrar API para obtener temperatura, humedad y precipitaciones en tiempo real.
+✅ Relacionar estos datos con eventos climáticos extremos y visualizar tendencias.
+✅ Implementar cacheo de datos para reducir el número de peticiones a la API.
+
+**🔹 Tecnologías utilizadas:**
+- **OpenWeatherMap API**: Proporciona datos meteorológicos y pronósticos.
+- **Axios**: Cliente HTTP para realizar peticiones a la API de manera eficiente.
+- **IndexedDB (Dexie.js)**: Base de datos local para almacenar datos meteorológicos y reducir consumo de API.
+
+---
+
+## **3️⃣ Fase 3: Implementación de Análisis y Reportes**
+### 🔹 Tablas Interactivas de Datos (DataTables.js)
+✅ Crear una base de datos de reportes ambientales y permitir la consulta interactiva.
+✅ Implementar filtrado por fecha, ubicación y tipo de incidente ambiental.
+✅ Permitir exportación a formatos CSV y Excel.
+
+**🔹 Tecnologías utilizadas:**
+- **DataTables.js**: Biblioteca JavaScript para generar tablas dinámicas y filtrables.
+- **Firestore (Firebase Database)**: Almacén NoSQL para reportes ambientales.
+- **Pandas (Python, opcional en backend)**: Para análisis avanzado y generación de reportes si se implementa un backend adicional.
+
+### 🔹 Análisis de Imágenes con IA (TensorFlow.js)
+✅ Implementar detección de **zonas deforestadas** a partir de imágenes satelitales.
+✅ Identificar signos de **desertificación o incendios recientes** mediante modelos de IA.
+✅ Permitir que usuarios suban imágenes desde dispositivos móviles para su análisis.
+
+**🔹 Tecnologías utilizadas:**
+- **TensorFlow.js**: Biblioteca de aprendizaje automático en el cliente.
+- **COCO-SSD**: Modelo preentrenado de detección de objetos.
+- **Canvas API**: Para procesamiento y análisis de imágenes directamente en el navegador.
+
+---
+
+## **4️⃣ Fase 4: Optimización y Funcionalidades Adicionales**
+### 🔹 Sistema de Alertas
+✅ Notificaciones en caso de cambios bruscos en temperatura o humedad.
+✅ Alertas basadas en reportes generados por usuarios.
+✅ Soporte para notificaciones push en dispositivos móviles.
+
+**🔹 Tecnologías utilizadas:**
+- **Firebase Cloud Messaging (FCM)**: Para notificaciones push en tiempo real.
+- **Service Workers**: Permite recibir notificaciones incluso cuando la app no está abierta.
+
+### 🔹 Dashboard Interactivo
+✅ Visualización de datos con gráficos y tendencias climáticas.
+✅ Estadísticas sobre el impacto ambiental en distintas regiones.
+✅ Implementación de gráficas avanzadas para comparación de datos.
+
+**🔹 Tecnologías utilizadas:**
+- **Chart.js**: Librería de visualización de datos con gráficos interactivos.
+- **D3.js**: Para gráficos avanzados y personalizados.
+
+### 🔹 Crowdsourcing de Reportes
+✅ Permitir que los usuarios suban fotos y registros de campo.
+✅ Implementar un sistema de votación para validar reportes enviados por la comunidad.
+
+**🔹 Tecnologías utilizadas:**
+- **Firebase Storage**: Para almacenar imágenes y documentos de reportes.
+- **FireStore Rules**: Para verificar la autenticidad de los reportes.
+
+---
+
+## **5️⃣ Fase 5: Pruebas y Despliegue**
+### 🔹 Pruebas y Corrección de Errores
+✅ Testear todas las funcionalidades con distintos roles de usuario.
+✅ Mejorar rendimiento y optimizar cargas de datos para evitar ralentizaciones.
+✅ Implementar pruebas automatizadas para la validación de la plataforma.
+
+**🔹 Tecnologías utilizadas:**
+- **Jest**: Framework de pruebas para React.js.
+- **Cypress**: Testing end-to-end en la aplicación web.
+- **Lighthouse**: Herramienta de optimización de rendimiento y accesibilidad.
+
+### 🔹 Despliegue
+✅ Implementar en un hosting adecuado como **Vercel o Firebase Hosting**.
+✅ Optimizar la app para dispositivos móviles.
+✅ Recopilar feedback de los primeros usuarios y mejorar la plataforma.
+
+**🔹 Tecnologías utilizadas:**
+- **Vercel**: Plataforma de despliegue optimizada para React.js.
+- **Firebase Hosting**: Hosting escalable con CDN integrada.
+- **PWA (Progressive Web App)**: Permitir el uso offline y una mejor experiencia móvil.
+
+---
+
+📌 **Conclusión**
+Esta hoja de ruta permitirá desarrollar la aplicación de manera estructurada, asegurando que todas las tecnologías se implementen de forma coherente y eficiente. 🚀
+

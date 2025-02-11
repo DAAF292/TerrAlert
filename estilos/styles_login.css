@@ -1,0 +1,154 @@
+/* styles.css */
+
+/* Reset de márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1D3C59; /* Azul Profundo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* Barra de navegación */
+nav {
+  width: 100%;
+  background-color: #FFFFFF; /* Blanco */
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.contenedor-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px; /* Aumentamos el tamaño del logo */
+  margin-left: 20px; /* Ajustamos el margen izquierdo */
+}
+
+.nombre-app h1 {
+  color: #1D3C59; /* Azul Profundo */
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* Estilo del formulario de login */
+.contenedor-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 80px; /* Espacio para la nav fija */
+  padding: 20px; /* Espacio adicional */
+}
+
+.caja-login {
+  background-color: #FFFFFF; /* Blanco */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Aumentamos el tamaño máximo */
+  margin-top: 20px;
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  color: #1D3C59; /* Azul Profundo */
+  margin-bottom: 40px; /* Más espacio debajo */
+  font-size: 26px; /* Aumentamos tamaño del título */
+}
+
+/* Estilo de los grupos de inputs */
+.grupo-entrada {
+  margin-bottom: 25px; /* Más espacio entre inputs */
+}
+
+label {
+  display: block;
+  color: #1D3C59; /* Azul Profundo */
+  margin-bottom: 8px; /* Más espacio entre el label y el input */
+  font-size: 16px;
+}
+
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px; /* Un poco más de padding para mayor comodidad */
+  border: 1px solid #A5A5A5; /* Gris Neutro */
+  border-radius: 6px; /* Bordes más redondeados */
+  font-size: 16px;
+}
+
+/* Estilo del botón de login */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px; /* Un poco más de padding */
+  background-color: #FF6F61; /* Naranja Coral */
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  border-radius: 6px; /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #E85C51; /* Naranja Coral oscuro */
+}
+
+/* Enlaces de acción */
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px; /* Más espacio entre los botones y los enlaces */
+}
+
+a {
+  color: #A7D86D; /* Verde Lima */
+  text-decoration: none;
+  font-size: 14px; /* Un poco más grande */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FF6F61; /* Naranja Coral en hover */
+  text-decoration: underline;
+}
+
+/* Estilo para el enlace de registro */
+.enlace-registro {
+  text-align: center;
+  margin-top: 25px; /* Más espacio en la parte inferior */
+}
+
+.enlace-registro p {
+  color: #1D3C59; /* Azul Profundo */
+  font-size: 14px;
+}
+
+.enlace-registro a {
+  font-size: 16px; /* Un poco más grande para hacerlo más visible */
+  color: #FF6F61; /* Naranja Coral */
+  text-decoration: none;
+}
+
+.enlace-registro a:hover {
+  text-decoration: underline;
+}
