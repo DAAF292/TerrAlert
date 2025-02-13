@@ -486,3 +486,203 @@ body {
         padding: 8px;
     }
 }
+/* Contenedor principal de reportes */
+#reportesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #FFFFFF; /* Fondo blanco para mantener coherencia */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Botones principales de reportes */
+#btnGenerarReporte, #btnConsultarReportes, #btnVolver, #btnSubirImagen, #btnHacerFoto, #btnCapturar, #submitReport {
+    background-color: #FF6F61; /* Naranja Coral */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnGenerarReporte:hover, #btnConsultarReportes:hover, #btnVolver:hover, #btnSubirImagen:hover, #btnHacerFoto:hover, #btnCapturar:hover, #submitReport:hover {
+    background-color: #A7D86D; /* Verde Lima */
+    color: #1D3C59;
+}
+
+/* Estilos del formulario de reportes */
+#landscapeForm {
+    background-color: #F8F8F8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+#landscapeForm label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #1D3C59;
+}
+
+#landscapeForm input, #landscapeForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #A5A5A5;
+    border-radius: 4px;
+}
+
+#landscapeForm textarea {
+    resize: none;
+}
+
+/* Estilos de la tabla de reportes */
+#tablaReportes {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#tablaReportes th, #tablaReportes td {
+    border: 1px solid #A5A5A5;
+    padding: 10px;
+    text-align: center;
+}
+
+#tablaReportes th {
+    background-color: #1D3C59; /* Azul Profundo */
+    color: #FFFFFF;
+}
+
+/* Imagen en la tabla */
+#tablaReportes img {
+    max-width: 100px;
+    border-radius: 4px;
+}
+
+/* Estilo de la imagen previa */
+#preview {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#landscapeForm #iuuu {
+    color: #1D3C59;
+    text-align: center;
+}
+/* Estilos generales para la tabla de reportes */
+#tablaReportes {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #FFFFFF; /* Blanco */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Cabecera de la tabla */
+#tablaReportes thead {
+    background-color: #FF6F61; /* Azul profundo */
+    color: white;
+    text-align: left;
+}
+
+#tablaReportes th {
+    padding: 14px 20px;
+    font-size: 16px;
+    background-color: #FF6F61;
+}
+
+/* Filas de la tabla */
+#tablaReportes tbody tr {
+    border-bottom: 2px solid #f1f1f1; /* Borde suave entre filas */
+}
+
+#tablaReportes tbody tr:hover {
+    background-color: #f7f7f7; /* Gris suave al pasar el ratón */
+}
+
+/* Celdas de la tabla */
+#tablaReportes td {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #FF6F61; /* Color de texto */
+}
+
+/* Estilo para las imágenes dentro de la tabla */
+#tablaReportes img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos de la paginación y otros controles */
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.dataTables_wrapper .dataTables_paginate a {
+    color: #1D3C59;
+    padding: 8px 16px;
+    margin: 0 6px;
+    border-radius: 5px;
+    background-color: #A7D86D; /* Verde lima */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_paginate a:hover {
+    background-color: #FF6F61; /* Naranja coral */
+    color: white;
+}
+
+/* Estilo del botón de volver */
+#btnVolver {
+    background-color: #FF6F61; /* Naranja coral */
+    color: white;
+    padding: 12px 18px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnVolver:hover {
+    background-color: #A7D86D; /* Azul profundo */
+}
+
+/* Estilos del filtro de búsqueda (si se aplica) */
+.dataTables_filter input {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+    width: 250px;
+}
+
+/* Estilo de los mensajes de información */
+#result {
+    color: #FF6F61; /* Naranja coral */
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}

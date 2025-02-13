@@ -3,6 +3,8 @@ import * as firebase from './firebase.js';
 import * as datos from './extraccionInformacion.js';
 import * as tabla from './dataTable.js';
 import * as mapa from './leaflet.js';
+import * as camera from './camera.js';
+import * as ai from './ai.js';
 
 
 /**
@@ -500,5 +502,224 @@ export function dibujarAnalisis() {
             console.error("Error en la búsqueda de ciudad:", error);
             alert('Hubo un problema al buscar la ciudad.');
         }
+    });
+}
+
+
+// Array para almacenar los reportes
+let reports = [];
+
+/**
+ * Función que dibuja de forma dinámica la sección de reportes.
+ * Se crean dos botones: uno para generar reporte y otro para consultar reportes.
+ * Se integra la funcionalidad de cámara y de IA.
+ */
+export function dibujarReportes() {
+    console.log('Dibujar la sección de Reportes');
+    // Limpiar el contenedor principal (asumiendo que se usa jQuery y el main tiene id="main")
+    $('#main').empty();
+
+    // Crear contenedor principal para reportes
+    const $container = $('<div>', { id: 'reportesContainer' });
+    
+    // Botones de acciones
+    const $btnGenerar = $('<button>', { id: 'btnGenerarReporte', text: 'Generar Reporte' });
+    const $btnConsultar = $('<button>', { id: 'btnConsultarReportes', text: 'Consultar Reportes' });
+    
+    $container.append($btnGenerar, $btnConsultar);
+    $('#main').append($container);
+
+    // Evento: Generar Reporte
+    $btnGenerar.on('click', function() {
+        $('#main').empty();
+        const $generarContainer = $('<div>', { id: 'generarReporte' });
+        $generarContainer.append($('<h2>', { text: 'Generar Reporte' }));
+
+        // Botón para subir imagen
+        const $btnSubir = $('<button>', { id: 'btnSubirImagen', text: 'Subir Imagen' });
+        $generarContainer.append($btnSubir);
+
+        // Si hay cámara disponible, agregar botón para hacer foto
+        camera.checkCameraAvailability().then(hasCamera => {
+            if (hasCamera) {
+                const $btnHacerFoto = $('<button>', { id: 'btnHacerFoto', text: 'Hacer una foto' });
+                $generarContainer.append($btnHacerFoto);
+                
+                // Evento: Hacer una foto
+                $btnHacerFoto.on('click', function() {
+                    $btnSubir.hide(); // Ocultar el botón de subir imagen
+                    // Crear contenedor para la cámara
+                    const $cameraDiv = $('<div>', { id: 'camera' });
+                    const $video = $('<video>', { id: 'video', width: 300, height: 200, autoplay: true });
+                    $cameraDiv.append($video);
+                    const $btnCapturar = $('<button>', { id: 'btnCapturar', text: 'Capturar Imagen' });
+                    $cameraDiv.append($btnCapturar);
+                    $generarContainer.append($cameraDiv);
+
+                    // Iniciar cámara (se le pasa el elemento video y el contenedor para el selector)
+                    camera.startCamera($video[0], $generarContainer[0]).catch(console.error);
+
+                    // Evento: Capturar imagen
+                    $btnCapturar.on('click', function() {
+                        const imageData = camera.captureImage($video[0]);
+                        camera.stopCamera();
+                        $cameraDiv.remove();
+                        // Mostrar imagen previsualizada
+                        const $imgPreview = $('<img>', { 
+                            id: 'preview', 
+                            src: imageData, 
+                            css: { maxWidth: '300px', display: 'block', margin: '20px auto' } 
+                        });
+                        $generarContainer.append($imgPreview);
+                        // Clasificar imagen con IA
+                        ai.classifyImage($imgPreview[0]).then(result => {
+                            const detected = result.detectedLandscape;
+                            const $resultMsg = $('<p>', { 
+                                id: 'result', 
+                                text: detected ? `Paisaje detectado: ${detected}` : 'No se pudo determinar el paisaje. Ingrese manualmente.' 
+                            });
+                            $generarContainer.append($resultMsg);
+                            // Mostrar formulario para completar datos del reporte
+                            mostrarFormularioReporte($generarContainer, imageData, detected);
+                        }).catch(console.error);
+                    });
+                });
+            }
+        });
+
+        // Evento: Subir imagen
+        $btnSubir.on('click', function() {
+            $('#btnHacerFoto').hide(); // Ocultar si existe
+            const $fileInput = $('<input>', { type: 'file', id: 'imageUpload', accept: 'image/*', css: { display: 'none' } });
+            $generarContainer.append($fileInput);
+            $fileInput.click();
+            $fileInput.on('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                const imageUrl = URL.createObjectURL(file);
+                const $imgPreview = $('<img>', { 
+                    id: 'preview', 
+                    src: imageUrl, 
+                    css: { maxWidth: '300px', display: 'block', margin: '20px auto' } 
+                });
+                $generarContainer.append($imgPreview);
+                ai.classifyImage($imgPreview[0]).then(result => {
+                    const detected = result.detectedLandscape;
+                    const $resultMsg = $('<p>', { 
+                        id: 'result', 
+                        text: detected ? `Paisaje detectado: ${detected}` : 'No se pudo determinar el paisaje. Ingrese manualmente.' 
+                    });
+                    $generarContainer.append($resultMsg);
+                    mostrarFormularioReporte($generarContainer, imageUrl, detected);
+                }).catch(console.error);
+            });
+        });
+
+        // Botón para volver a la vista principal de reportes
+        const $btnVolver = $('<button>', { text: 'Volver', id: 'btnVolver' });
+        $generarContainer.append($btnVolver);
+        $btnVolver.on('click', function() {
+            dibujarReportes();
+        });
+
+        $('#main').append($generarContainer);
+    });
+
+    // Evento: Consultar Reportes
+$btnConsultar.on('click', function () {
+    $('#main').empty();
+
+    // Crear la tabla
+    const $table = $('<table>', { id: 'tablaReportes', class: 'display', width: '100%' });
+    $('#main').append($table);
+
+    // Botón de volver
+    const $btnBack = $('<button>', { text: 'Volver', id: 'btnVolver', class: 'btn btn-secondary' });
+    $('#main').append($btnBack);
+
+    $btnBack.on('click', function () {
+        dibujarReportes();
+    });
+
+    // Formatear datos para DataTables
+    const datosFormateados = reports.map(report => ({
+        id: report.id,
+        landscape: report.landscapeType,
+        location: report.location,
+        description: report.description,
+        date: report.date,
+        image: `<img src="${report.image}" width="100">`
+    }));
+
+    // Inicializar DataTable
+    $('#tablaReportes').DataTable({
+        data: datosFormateados,
+        columns: [
+            { title: 'ID', data: 'id' },
+            { title: 'Paisaje', data: 'landscape' },
+            { title: 'Ubicación', data: 'location' },
+            { title: 'Descripción', data: 'description' },
+            { title: 'Fecha', data: 'date' },
+            { title: 'Imagen', data: 'image' }
+        ],
+        destroy: true,
+        paging: true,
+        searching: true,
+        info: true,
+        order: [[4, 'desc']] // Ordena por fecha de manera descendente
+    });
+});
+}
+
+/**
+ * Función auxiliar para mostrar el formulario de reporte.
+ * Recibe el contenedor donde insertar el formulario, la imagen (dataURL) y, si se detectó,
+ * el tipo de paisaje.
+ * @param {JQuery<HTMLElement>} $container 
+ * @param {string} imageData 
+ * @param {string|null} detectedLandscape 
+ */
+function mostrarFormularioReporte($container, imageData, detectedLandscape) {
+    const $form = $('<div>', { id: 'landscapeForm' });
+    $form.append($('<h3>', { text: 'Formulario de Reporte de Paisaje', id : 'iuuu' }));
+    $form.append($('<label>', { for: 'landscapeType', text: 'Tipo de paisaje:' }));
+    const $inputLandscape = $('<input>', { type: 'text', id: 'landscapeType', placeholder: 'Ingrese el tipo de paisaje', required: true });
+    if (detectedLandscape) {
+        $inputLandscape.val(detectedLandscape);
+    }
+    $form.append($inputLandscape);
+    $form.append($('<label>', { for: 'location', text: 'Ubicación:' }));
+    const $inputLocation = $('<input>', { type: 'text', id: 'location', required: true });
+    $form.append($inputLocation);
+    $form.append($('<label>', { for: 'description', text: 'Descripción:' }));
+    const $inputDescription = $('<textarea>', { id: 'description', rows: 4, required: true });
+    $form.append($inputDescription);
+    $form.append($('<label>', { for: 'date', text: 'Fecha:' }));
+    const $inputDate = $('<input>', { type: 'date', id: 'date', required: true });
+    $form.append($inputDate);
+    const $btnSubmit = $('<button>', { type: 'button', text: 'Enviar Reporte', id: 'submitReport' });
+    $form.append($btnSubmit);
+    $container.append($form);
+
+    $btnSubmit.on('click', function() {
+        const landscapeType = $inputLandscape.val();
+        const location = $inputLocation.val();
+        const description = $inputDescription.val();
+        const date = $inputDate.val();
+        if (!landscapeType || !location || !description || !date) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+        const report = {
+            id: Date.now(),
+            landscapeType,
+            location,
+            description,
+            date,
+            image: imageData
+        };
+        reports.push(report);
+        alert('Reporte enviado exitosamente.');
+        dibujarReportes();
     });
 }
