@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset de márgenes y paddings */
 * {
   margin: 0;
@@ -27,24 +25,27 @@ nav {
   top: 0;
   left: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenedor-nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo img {
-  width: 60px; /* Aumentamos el tamaño del logo */
-  margin-left: 20px; /* Ajustamos el margen izquierdo */
+  width: 60px;
 }
 
 .nombre-app h1 {
-  color: #1D3C59; /* Azul Profundo */
+  color: #1D3C59;
   font-size: 24px;
   font-weight: bold;
-  margin-left: 20px;
+  text-align: center;
 }
 
 /* Estilo del formulario de login */
@@ -53,63 +54,63 @@ nav {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  margin-top: 80px; /* Espacio para la nav fija */
-  padding: 20px; /* Espacio adicional */
+  margin-top: 100px;
+  padding: 20px;
 }
 
 .caja-login {
-  background-color: #FFFFFF; /* Blanco */
+  background-color: #FFFFFF;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px; /* Aumentamos el tamaño máximo */
+  max-width: 450px;
   margin-top: 20px;
 }
 
 /* Títulos */
 h2 {
   text-align: center;
-  color: #1D3C59; /* Azul Profundo */
-  margin-bottom: 40px; /* Más espacio debajo */
-  font-size: 26px; /* Aumentamos tamaño del título */
+  color: #1D3C59;
+  margin-bottom: 40px;
+  font-size: 26px;
 }
 
 /* Estilo de los grupos de inputs */
 .grupo-entrada {
-  margin-bottom: 25px; /* Más espacio entre inputs */
+  margin-bottom: 25px;
 }
 
 label {
   display: block;
-  color: #1D3C59; /* Azul Profundo */
-  margin-bottom: 8px; /* Más espacio entre el label y el input */
+  color: #1D3C59;
+  margin-bottom: 8px;
   font-size: 16px;
 }
 
 input[type="email"], input[type="password"] {
   width: 100%;
-  padding: 12px; /* Un poco más de padding para mayor comodidad */
-  border: 1px solid #A5A5A5; /* Gris Neutro */
-  border-radius: 6px; /* Bordes más redondeados */
+  padding: 12px;
+  border: 1px solid #A5A5A5;
+  border-radius: 6px;
   font-size: 16px;
 }
 
 /* Estilo del botón de login */
 button[type="submit"] {
   width: 100%;
-  padding: 12px; /* Un poco más de padding */
-  background-color: #FF6F61; /* Naranja Coral */
+  padding: 12px;
+  background-color: #FF6F61;
   border: none;
   color: #FFFFFF;
   font-size: 16px;
-  border-radius: 6px; /* Bordes más redondeados */
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #E85C51; /* Naranja Coral oscuro */
+  background-color: #E85C51;
 }
 
 /* Enlaces de acción */
@@ -117,38 +118,80 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 15px; /* Más espacio entre los botones y los enlaces */
+  margin-top: 15px;
 }
 
 a {
-  color: #A7D86D; /* Verde Lima */
+  color: #A7D86D;
   text-decoration: none;
-  font-size: 14px; /* Un poco más grande */
+  font-size: 14px;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #FF6F61; /* Naranja Coral en hover */
+  color: #FF6F61;
   text-decoration: underline;
 }
 
 /* Estilo para el enlace de registro */
 .enlace-registro {
   text-align: center;
-  margin-top: 25px; /* Más espacio en la parte inferior */
+  margin-top: 25px;
 }
 
 .enlace-registro p {
-  color: #1D3C59; /* Azul Profundo */
+  color: #1D3C59;
   font-size: 14px;
 }
 
 .enlace-registro a {
-  font-size: 16px; /* Un poco más grande para hacerlo más visible */
-  color: #FF6F61; /* Naranja Coral */
+  font-size: 16px;
+  color: #FF6F61;
   text-decoration: none;
 }
 
 .enlace-registro a:hover {
   text-decoration: underline;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+  .contenedor-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logo img {
+    width: 50px;
+  }
+  
+  .nombre-app h1 {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  
+  .caja-login {
+    padding: 30px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-login {
+    margin-top: 70px;
+  }
+  
+  .caja-login {
+    padding: 20px;
+  }
+  
+  button[type="submit"] {
+    font-size: 18px;
+    padding: 14px;
+  }
+  
+  a {
+    font-size: 16px;
+  }
 }

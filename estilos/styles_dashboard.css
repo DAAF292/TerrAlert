@@ -315,6 +315,7 @@ body {
         font-size: 14px; /* Reducir el tamaño de los párrafos en pantallas pequeñas */
     }
 }
+
 /* 🔹 Contenedor Principal (Solo Análisis Climático) */
 .analisis-container {
     max-width: 900px;
@@ -407,7 +408,7 @@ body {
     background: #F8F8F8;
 }
 
-/* 🔹 Responsividad */
+/* 🔹 Responsividad para el formulario (ya existente) */
 @media (max-width: 600px) {
     .analisis-container .clima-form {
         flex-direction: column;
@@ -420,6 +421,7 @@ body {
         width: 50%;
     }
 }
+
 /* 🔹 Estilo general de la tabla */
 .analisis-container .clima-tabla {
     width: 100%;
@@ -475,7 +477,7 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
-/* 🔹 Responsividad */
+/* 🔹 Responsividad para la tabla */
 @media (max-width: 600px) {
     .analisis-container .clima-tabla {
         font-size: 14px;
@@ -486,203 +488,112 @@ body {
         padding: 8px;
     }
 }
-/* Contenedor principal de reportes */
-#reportesContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #FFFFFF; /* Fondo blanco para mantener coherencia */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 80%;
+
+/* =========================================
+   Mejoras de responsividad para móviles sin alterar los estilos originales
+   ========================================= */
+
+/* Para pantallas medianas (máximo 768px) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 10px;
+        box-shadow: none;
+    }
+    .logo-container img {
+        width: 50px;
+    }
+    .app-name {
+        font-size: 18px;
+    }
+    .sidebar .menu ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .sidebar .menu ul li {
+        margin: 0;
+    }
+    .sidebar .menu ul li a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
 }
 
-/* Botones principales de reportes */
-#btnGenerarReporte, #btnConsultarReportes, #btnVolver, #btnSubirImagen, #btnHacerFoto, #btnCapturar, #submitReport {
-    background-color: #FF6F61; /* Naranja Coral */
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 15px;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Para pantallas pequeñas (máximo 480px) */
+@media (max-width: 480px) {
+    /* La navegación pasa a actuar como header */
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 10px;
+        box-shadow: none;
+    }
+    
+    /* Ocultar el logo para ahorrar espacio y mostrar solo el nombre de la app */
+    .logo-container img {
+        display: none;
+    }
+    
+    .app-name {
+        font-size: 16px;
+    }
+    
+    /* Menú en fila */
+    .sidebar .menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .sidebar .menu ul li {
+        margin: 0;
+    }
+    
+    /* El contenido principal se sitúa debajo del header sin margen lateral */
+    .dashboard-main {
+        margin: 0;
+        padding: 20px;
+        min-height: calc(100vh - 60px); /* Ajuste considerando la altura del header */
+    }
+    
+    /* Las tarjetas de resumen se disponen en columna */
+    .summary-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Ajustar el contenedor de análisis y reportes al ancho completo */
+    .analisis-container,
+    .table-container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 10px;
+        min-height: 300px;
+    }
 }
 
-#btnGenerarReporte:hover, #btnConsultarReportes:hover, #btnVolver:hover, #btnSubirImagen:hover, #btnHacerFoto:hover, #btnCapturar:hover, #submitReport:hover {
-    background-color: #A7D86D; /* Verde Lima */
-    color: #1D3C59;
-}
-
-/* Estilos del formulario de reportes */
-#landscapeForm {
-    background-color: #F8F8F8;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+/* =========================================
+   Scroll horizontal para DataTables
+   ========================================= */
+.dataTables_wrapper {
     width: 100%;
-    max-width: 500px;
+    overflow-x: auto;
 }
 
-#landscapeForm label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-    color: #1D3C59;
-}
-
-#landscapeForm input, #landscapeForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #A5A5A5;
-    border-radius: 4px;
-}
-
-#landscapeForm textarea {
-    resize: none;
-}
-
-/* Estilos de la tabla de reportes */
-#tablaReportes {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-#tablaReportes th, #tablaReportes td {
-    border: 1px solid #A5A5A5;
-    padding: 10px;
-    text-align: center;
-}
-
-#tablaReportes th {
-    background-color: #1D3C59; /* Azul Profundo */
-    color: #FFFFFF;
-}
-
-/* Imagen en la tabla */
-#tablaReportes img {
-    max-width: 100px;
-    border-radius: 4px;
-}
-
-/* Estilo de la imagen previa */
-#preview {
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-#landscapeForm #iuuu {
-    color: #1D3C59;
-    text-align: center;
-}
-/* Estilos generales para la tabla de reportes */
-#tablaReportes {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    background-color: #FFFFFF; /* Blanco */
-    border: 1px solid #ddd; /* Borde suave */
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Cabecera de la tabla */
-#tablaReportes thead {
-    background-color: #FF6F61; /* Azul profundo */
-    color: white;
-    text-align: left;
-}
-
-#tablaReportes th {
-    padding: 14px 20px;
-    font-size: 16px;
-    background-color: #FF6F61;
-}
-
-/* Filas de la tabla */
-#tablaReportes tbody tr {
-    border-bottom: 2px solid #f1f1f1; /* Borde suave entre filas */
-}
-
-#tablaReportes tbody tr:hover {
-    background-color: #f7f7f7; /* Gris suave al pasar el ratón */
-}
-
-/* Celdas de la tabla */
-#tablaReportes td {
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #FF6F61; /* Color de texto */
-}
-
-/* Estilo para las imágenes dentro de la tabla */
-#tablaReportes img {
-    width: 80px;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Estilos de la paginación y otros controles */
-.dataTables_wrapper .dataTables_paginate {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.dataTables_wrapper .dataTables_paginate a {
-    color: #1D3C59;
-    padding: 8px 16px;
-    margin: 0 6px;
-    border-radius: 5px;
-    background-color: #A7D86D; /* Verde lima */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.dataTables_wrapper .dataTables_paginate a:hover {
-    background-color: #FF6F61; /* Naranja coral */
-    color: white;
-}
-
-/* Estilo del botón de volver */
-#btnVolver {
-    background-color: #FF6F61; /* Naranja coral */
-    color: white;
-    padding: 12px 18px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#btnVolver:hover {
-    background-color: #A7D86D; /* Azul profundo */
-}
-
-/* Estilos del filtro de búsqueda (si se aplica) */
-.dataTables_filter input {
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-left: 10px;
-    width: 250px;
-}
-
-/* Estilo de los mensajes de información */
-#result {
-    color: #FF6F61; /* Naranja coral */
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
+/* =========================================
+   Mostrar solo 2 noticias en pantallas pequeñas
+   ========================================= */
+@media (max-width: 480px) {
+    .news-cards .card:nth-child(3) {
+        display: none;
+    }
 }
