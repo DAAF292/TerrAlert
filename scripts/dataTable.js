@@ -3,21 +3,21 @@
  * @param {Array} datos - Array de objetos con la información climática.
  */
 export function inicializarDataTable(datos) {
-    // Inicializa DataTable solo cuando hay datos disponibles
+    // Verifica que haya datos disponibles antes de inicializar DataTable
     if (datos && datos.length > 0) {
         $('#example').DataTable({
-            data: datos,
+            data: datos, // Asigna los datos a la tabla
             columns: [
-                { title: 'Parámetro', data: 'name' },
-                { title: 'Valor', data: 'value' }
+                { title: 'Parámetro', data: 'name' }, // Define la columna de parámetros
+                { title: 'Valor', data: 'value' } // Define la columna de valores
             ],
-            destroy: true, // Permite reiniciar la tabla sin duplicar los datos
-            paging: false, // Opcional: desactiva la paginación si los datos no son muchos
-            searching: false, // Opcional: desactiva la barra de búsqueda si no es necesaria
-            info: false // Opcional: desactiva el conteo de filas
+            destroy: true, // Permite reiniciar la tabla sin duplicar los datos previos
+            paging: false, // Desactiva la paginación si los datos no son muchos
+            searching: false, // Desactiva la barra de búsqueda si no es necesaria
+            info: false // Desactiva la visualización del conteo de filas
         });
     } else {
-        console.error("No hay datos para mostrar en la tabla.");
+        console.error("No hay datos para mostrar en la tabla."); // Mensaje de error si no hay datos
     }
 }
 
@@ -27,7 +27,13 @@ export function inicializarDataTable(datos) {
  * @returns {Array} - Array con los datos formateados para DataTable.
  */
 export function formatearDatosClima(datosClima) {
-    // Formatea los datos del clima en un array de objetos con name y value
+    // Verifica que el objeto datosClima no esté vacío
+    if (!datosClima) {
+        console.error("Datos climáticos no disponibles.");
+        return [];
+    }
+    
+    // Formatea los datos del clima en un array de objetos con claves 'name' y 'value'
     return [
         { name: 'Temperatura Actual', value: `${datosClima.temperaturaActual}°C` },
         { name: 'Humedad', value: `${datosClima.humedad}%` },
@@ -36,4 +42,3 @@ export function formatearDatosClima(datosClima) {
         { name: 'Temperatura Mínima', value: `${datosClima.temperaturaMinima}°C` }
     ];
 }
-

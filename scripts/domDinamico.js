@@ -548,6 +548,7 @@ export function dibujarReportes() {
                 // Evento: Hacer una foto
                 $btnHacerFoto.on('click', function() {
                     $btnSubir.hide(); // Ocultar el botón de subir imagen
+                    $btnHacerFoto.hide(); // Ocultar el botón de hacer foto
                     // Crear contenedor para la cámara
                     const $cameraDiv = $('<div>', { id: 'camera' });
                     const $video = $('<video>', { id: 'video', width: 300, height: 200, autoplay: true });
@@ -590,6 +591,7 @@ export function dibujarReportes() {
         // Evento: Subir imagen
         $btnSubir.on('click', function() {
             $('#btnHacerFoto').hide(); // Ocultar si existe
+            $btnSubir.hide(); // Ocultar el botón de subir imagen
             const $fileInput = $('<input>', { type: 'file', id: 'imageUpload', accept: 'image/*', css: { display: 'none' } });
             $generarContainer.append($fileInput);
             $fileInput.click();
@@ -681,6 +683,8 @@ $btnConsultar.on('click', function () {
  */
 function mostrarFormularioReporte($container, imageData, detectedLandscape) {
     const $form = $('<div>', { id: 'landscapeForm' });
+    $form.append($(`<br>`));
+    $form.append($(`<br>`));
     $form.append($('<h3>', { text: 'Formulario de Reporte de Paisaje', id : 'iuuu' }));
     $form.append($('<label>', { for: 'landscapeType', text: 'Tipo de paisaje:' }));
     const $inputLandscape = $('<input>', { type: 'text', id: 'landscapeType', placeholder: 'Ingrese el tipo de paisaje', required: true });
