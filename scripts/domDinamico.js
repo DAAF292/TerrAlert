@@ -15,7 +15,7 @@ import * as ai from './ai.js';
 */
 export function dibujarLogin() {
     console.log('Dibujar la pantalla de Login');
-    let $css = $('<link>', { rel: 'stylesheet', href: '../estilos/styles_login.css' });
+    let $css = $('<link>', { rel: 'stylesheet', href: './estilos/styles_login.css' });
     $('head').append($css);
     $('body').empty(); // Limpiar el contenido previo
     firebase.inicializarFirebase(); // Inicializa Firebase
@@ -24,7 +24,7 @@ export function dibujarLogin() {
     let barraNavegacion = $('<nav>');
     let contenedorNav = $('<div>').addClass('contenedor-nav');
     let divLogo = $('<div>').addClass('logo');
-    let imagenLogo = $('<img>').attr({src: '../media/logo1.png', alt: 'Logo de TerrAlert'});
+    let imagenLogo = $('<img>').attr({src: './media/logo1.png', alt: 'Logo de TerrAlert'});
     let divNombreApp = $('<div>').addClass('nombre-app');
     let tituloApp = $('<h1>').text('TerrAlert');
 
@@ -106,14 +106,14 @@ export function dibujarLogin() {
 export function dibujarDashboard() {
     console.log('Dibujar el Dashboard');
     $('link[href$="styles_login.css"]').remove();
-    let $css = $('<link>', { rel: 'stylesheet', href: '../estilos/styles_dashboard.css' });
+    let $css = $('<link>', { rel: 'stylesheet', href: './estilos/styles_dashboard.css' });
     $('head').append($css);
     $('body').empty();
 
     // Creación del sidebar
     let $sidebar = $('<aside>', { class: 'sidebar' });
     let $logoContainer = $('<div>', { class: 'logo-container' })
-        .append($('<img>', { src: '../media/logo1.png', alt: 'Logo de TerrAlert' }))
+        .append($('<img>', { src: './media/logo1.png', alt: 'Logo de TerrAlert' }))
         .append($('<h2>', { class: 'app-name', text: 'TerrAlert' }));
 
     let $menu = $('<nav>', { class: 'menu' })
