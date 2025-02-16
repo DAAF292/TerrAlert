@@ -175,7 +175,7 @@ export function dibujarInicio() {
     const newsCards = $('<div>', { class: 'news-cards' });
   
     // Obtener las noticias desde el archivo JSON
-    fetch('../json/noticias.json')
+    fetch('./json/noticias.json')
         .then(response => response.json())
         .then(noticias => {
             // Seleccionar tres noticias aleatorias
@@ -221,7 +221,7 @@ export function dibujarInicio() {
     const carousel = $('<div>', { class: 'carousel', id: 'carousel' });
   
     // Obtener las imágenes del archivo JSON
-    fetch('../json/imagenes.json')
+    fetch('./json/imagenes.json')
         .then(response => response.json())
         .then(imagenes => {
             // Seleccionar 5 imágenes aleatorias
