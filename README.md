@@ -16,7 +16,7 @@ TerrAlert es una aplicación web diseñada para proporcionar información climá
 - **Contraseña de prueba:** 123456
 
 ## Funcionamiento
-### Inormación Relevante
+### Información Relevante
 - **Geolocalización:** En dispositivos móviles, la geolocalización puede tardar un tiempo en obtenerse, especialmente si se está utilizando por primera vez. Este retraso es debido a la obtención de la ubicación precisa a través del navegador.
   
 - **Cámara en Dispositivos Móviles:** Cuando se realiza un reporte desde un dispositivo móvil, la primera vez que se selecciona la opción de tomar una foto, la aplicación utiliza por defecto la cámara delantera (Cuestión de permisos de los dispositivos). Sin embargo, si se recarga la aplicación y el dispositivo tiene otra cámara disponible, se puede cambiar entre ellas mediante el Select que aparecerá.
