@@ -11,6 +11,18 @@ TerrAlert es una aplicación web diseñada para proporcionar información climá
 - **Noticias sobre Cambio Climático:** Gestor de noticias basado en un archivo JSON local.
 - **Diseño Responsivo:** Interfaz optimizada para diferentes dispositivos.
 
+### Acceso y Pruebas
+- **Correo de prueba:** prueba@gmail.com
+- **Contraseña de prueba:** 123456
+
+## Funcionamiento
+### Inormación Relevante
+- **Geolocalización:** En dispositivos móviles, la geolocalización puede tardar un tiempo en obtenerse, especialmente si se está utilizando por primera vez. Este retraso es debido a la obtención de la ubicación precisa a través del navegador.
+  
+- **Cámara en Dispositivos Móviles:** Cuando se realiza un reporte desde un dispositivo móvil, la primera vez que se selecciona la opción de tomar una foto, la aplicación utiliza por defecto la cámara delantera (Cuestión de permisos de los dispositivos). Sin embargo, si se recarga la aplicación y el dispositivo tiene otra cámara disponible, se puede cambiar entre ellas mediante el Select que aparecerá.
+
+- **Reportes en Tiempo de Ejecución:** Los reportes generados solo existen durante la sesión actual de la aplicación. Esto significa que una vez que se cierra la aplicación , los reportes anteriores se eliminan automáticamente puesto que no hay Base de Datos que almacene dicha información.
+
 ## Tecnologías Utilizadas
 - **Frontend:** HTML, CSS, JavaScript, DataTables, Leaflet.js.
 - **Inteligencia Artificial:** TensorFlow.js, MobileNet.
@@ -22,25 +34,13 @@ TerrAlert es una aplicación web diseñada para proporcionar información climá
    ```bash
    git clone https://github.com/tu_usuario/TerrAlert.git
    ```
-2. **Instalar dependencias del frontend:**
-   ```bash
-   cd TerrAlert/frontend
-   npm install
-   ```
-3. **Iniciar servidor local para pruebas:**
-   ```bash
-   npm start
-   ```
-4. **Configurar backend en un servidor JEE y PHP**
-   - Asegurarse de que el servidor de aplicaciones soporta JEE y PHP.
-   - Configurar la base de datos si se requiere.
-
 ## Uso
 1. **Acceder a la plataforma desde el navegador.**
-2. **Consultar información climática por localización.**
-3. **Subir reportes con fotos y categorizar los paisajes automáticamente con IA.**
-4. **Visualizar tendencias climáticas y reportes previos en DataTables.**
-5. **Explorar noticias relevantes sobre el cambio climático.**
+   -Bien ejecuntando la aplicación de forma local o a través del enlace de GitHub Pages: **https://daaf292.github.io/TerrAlert/**
+3. **Consultar información climática por localización.**
+4. **Subir reportes con fotos y categorizar los paisajes automáticamente con IA.**
+5. **Visualizar tendencias climáticas y reportes previos en DataTables.**
+6. **Explorar noticias relevantes sobre el cambio climático.**
 
 ## Contribución
 Si deseas contribuir a TerrAlert:
